@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-banner",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-19T08:37:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/amazon",
+    "originPage": "Amazon employer microsite home page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "enrollment-banner",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + subheading + paragraph + 1 CTA + icon links",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "dark themed promotional banners",
+      "enrollment call-to-action sections",
+      "experience/tour promotional banners"
+    ],
+    "notSuitableFor": [
+      "light background heroes",
+      "image-based hero sections",
+      "simple text banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/amazon"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T08:37:00.000Z"
+  }
+}
