@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-resources",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-19T08:37:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/amazon",
+    "originPage": "Amazon employer microsite home page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "resource-cards",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + title + description + CTA link per card",
+    "buttonCount": 3,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "additional information/resource sections",
+      "3-card grid layouts with images",
+      "feature or service highlight cards"
+    ],
+    "notSuitableFor": [
+      "cards without images",
+      "icon-only card grids",
+      "single card or 2-card layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/amazon"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T08:37:00.000Z"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-video",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-19T08:37:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/amazon",
+    "originPage": "Amazon employer microsite home page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "video-with-text",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "video link + heading + paragraph",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "video + text side-by-side layouts",
+      "media alongside descriptive content",
+      "embedded content with explanation text"
+    ],
+    "notSuitableFor": [
+      "text-only column layouts",
+      "image gallery columns",
+      "more than 2 columns"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/amazon"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T08:37:00.000Z"
+  }
+}

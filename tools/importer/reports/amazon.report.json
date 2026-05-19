@@ -1,0 +1,23 @@
+{
+  "status": "success",
+  "url": "https://choose.kaiserpermanente.org/amazon",
+  "path": "amazon",
+  "timestamp": "2026-05-19T08:52:50.086Z",
+  "title": "amazon Home",
+  "template": "amazon-landing",
+  "blocks": [
+    "hero-welcome",
+    "columns-support",
+    "columns-video",
+    "tabs-features",
+    "columns-coverage",
+    "columns-coverage",
+    "columns-coverage",
+    "columns-coverage",
+    "columns-coverage",
+    "columns-coverage",
+    "columns-coverage",
+    "hero-banner",
+    "cards-resources"
+  ]
+}

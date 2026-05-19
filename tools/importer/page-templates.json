@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "projectType": "doc"
+  },
+  "templates": [
+    {
+      "name": "amazon-landing",
+      "urls": [
+        "https://choose.kaiserpermanente.org/amazon"
+      ],
+      "description": "Kaiser Permanente Amazon enrollment landing page with partner-specific content and CTAs",
+      "blocks": [
+        {
+          "name": "hero-welcome",
+          "instances": [
+            ".promo-v2-versionB-main-frame"
+          ]
+        },
+        {
+          "name": "columns-support",
+          "instances": [
+            ".planSupport-mainFrame"
+          ]
+        },
+        {
+          "name": "columns-video",
+          "instances": [
+            ".video-component-container"
+          ]
+        },
+        {
+          "name": "tabs-features",
+          "instances": [
+            ".tabbed-content.panelcontainer"
+          ]
+        },
+        {
+          "name": "columns-coverage",
+          "instances": [
+            ".responsivegrid.two-col .gs-image-core, .responsivegrid.two-col .responsivegrid.two-col"
+          ]
+        },
+        {
+          "name": "hero-banner",
+          "instances": [
+            ".banner-component-mainFrame"
+          ]
+        },
+        {
+          "name": "cards-resources",
+          "instances": [
+            "#card-pattern-component-mainFrame"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Section",
+          "selector": ".promo.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "hero-welcome"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Plan Support Section",
+          "selector": ".container-content.pale-blue",
+          "style": "pale-blue",
+          "blocks": [
+            "columns-support"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Video Section",
+          "selector": ".video-component.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "columns-video"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Why Kaiser Permanente Section",
+          "selector": [
+            ".text.aem-GridColumn #text-d28e84b210",
+            ".tabbed-content.panelcontainer"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-features"
+          ],
+          "defaultContent": [
+            "#text-d28e84b210 h2"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Everything in One Place Section",
+          "selector": "#promo-2016534242",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".promo-title.sectionTitle",
+            ".body-details.sectionBody",
+            ".button-font-healthy"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Coverage Section",
+          "selector": [
+            "#text-45604a82ca",
+            ".responsivegrid.two-col"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-coverage"
+          ],
+          "defaultContent": [
+            "#text-45604a82ca h2",
+            "#text-45604a82ca p"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Experience Banner Section",
+          "selector": ".banner-component.aem-GridColumn",
+          "style": "dark-blue",
+          "blocks": [
+            "hero-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Additional Information Section",
+          "selector": ".card-pattern-component.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "cards-resources"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Footnotes Section",
+          "selector": ".footnotes-component.aem-GridColumn",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".footnotes-hrLine",
+            ".footnotes-sectionHeader",
+            ".footnotes-sectionBody"
+          ]
+        }
+      ]
+    }
+  ]
+}
