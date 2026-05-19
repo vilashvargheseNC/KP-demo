@@ -1,0 +1,94 @@
+/* Accordion block - Kaiser Permanente plan options style
+ * Collapsible rows with plus/minus icon, blue text label, white card body.
+ */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(0 0 0 / 10%);
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid rgb(0 0 0 / 10%);
+  background-color: #fff;
+}
+
+.accordion .accordion-item-label {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--link-color);
+  user-select: none;
+}
+
+.accordion .accordion-item-label::-webkit-details-marker {
+  display: none;
+}
+
+/* Plus / minus icon */
+.accordion .accordion-item-label::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  background-color: var(--link-color);
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z' fill='black'/></svg>");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 18px 18px;
+  transition: transform 0.2s ease;
+}
+
+.accordion .accordion-item[open] .accordion-item-label::before {
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M19 13H5V11H19V13Z' fill='black'/></svg>");
+}
+
+.accordion .accordion-item-label:hover {
+  text-decoration: underline;
+}
+
+.accordion .accordion-item-body {
+  padding: 8px 24px 28px 58px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.accordion .accordion-item-body p {
+  margin: 0 0 12px;
+}
+
+.accordion .accordion-item-body ul {
+  margin: 8px 0 16px;
+  padding-left: 20px;
+}
+
+.accordion .accordion-item-body ul li {
+  margin: 4px 0;
+}
+
+.accordion .accordion-item-body a:any-link {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.accordion .accordion-item-body a:any-link:hover {
+  color: var(--link-hover-color);
+}
+
+@media (width >= 900px) {
+  .accordion .accordion-item-label {
+    padding: 20px 32px;
+    font-size: 20px;
+  }
+
+  .accordion .accordion-item-body {
+    padding: 8px 32px 32px 66px;
+  }
+}

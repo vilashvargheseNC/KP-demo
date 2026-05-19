@@ -13,9 +13,19 @@
   padding: 0;
 }
 
-/* Hide empty default content after the block */
+/* Default content after the hero (e.g. "Ready to Enroll?" on /amazon/resources)
+ * — keep it visible, just give it the same horizontal padding the rest of the page uses.
+ */
 .hero-welcome-container .default-content-wrapper {
-  display: none;
+  max-width: var(--content-max-width);
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+@media (width >= 900px) {
+  .hero-welcome-container .default-content-wrapper {
+    padding: 0 32px;
+  }
 }
 
 /* Block container - relative for overlay positioning */

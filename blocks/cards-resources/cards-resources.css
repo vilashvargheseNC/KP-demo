@@ -118,3 +118,119 @@ main .cards-resources .cards-resources-card-body p.button-container {
     height: 304px;
   }
 }
+
+/* === Video cards variant === */
+.cards-resources.video-cards .cards-resources-card-image {
+  position: relative;
+}
+
+.cards-resources.video-cards .cards-resources-card-image img {
+  height: 200px;
+  border-radius: 12px 12px 0 0;
+}
+
+@media (width >= 900px) {
+  .cards-resources.video-cards .cards-resources-card-image img {
+    height: 220px;
+  }
+}
+
+/* Play button overlay */
+.cards-resources.video-cards .cards-resources-card-image::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 90%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cards-resources.video-cards .cards-resources-card-image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 18px solid var(--link-color);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  transform: translate(-30%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Video card body: 5 paragraphs (Video label, title, duration, description, View link) */
+.cards-resources.video-cards .cards-resources-card-body {
+  padding: 16px;
+  gap: 4px;
+}
+
+.cards-resources.video-cards .cards-resources-card-body p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-color);
+}
+
+/* p:first-child = "Video" label */
+.cards-resources.video-cards .cards-resources-card-body p:first-child {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(13 28 61 / 70%);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+/* p:nth-child(2) = Title (contains <strong>) */
+.cards-resources.video-cards .cards-resources-card-body p:nth-child(2) {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.cards-resources.video-cards .cards-resources-card-body p:nth-child(2) strong {
+  font-weight: 500;
+}
+
+/* p:nth-child(3) = Duration */
+.cards-resources.video-cards .cards-resources-card-body p:nth-child(3) {
+  font-size: 13px;
+  color: rgb(13 28 61 / 65%);
+}
+
+/* p:nth-child(4) = Description */
+.cards-resources.video-cards .cards-resources-card-body p:nth-child(4) {
+  font-size: 14px;
+  margin: 4px 0 12px;
+  flex: 1;
+}
+
+/* p:last-child = View link */
+.cards-resources.video-cards .cards-resources-card-body p:last-child {
+  padding-top: 0;
+  margin-top: auto;
+}
+
+.cards-resources.video-cards .cards-resources-card-body a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.cards-resources.video-cards .cards-resources-card-body a:any-link::after {
+  content: '›';
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+}
