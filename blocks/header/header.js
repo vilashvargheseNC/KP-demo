@@ -137,6 +137,18 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // Fix broken brand image (source authors used `about:error`) and add Amazon co-brand
+  const brandImg = navBrand.querySelector('img');
+  if (brandImg && (!brandImg.src || brandImg.src === 'about:error' || brandImg.naturalWidth === 0)) {
+    const anchor = brandImg.closest('a') || brandImg.parentElement;
+    anchor.classList.add('nav-brand-link');
+    anchor.innerHTML = `
+      <img class="nav-brand-logo" src="/icons/kp-logo.svg" alt="Kaiser Permanente" width="374" height="42">
+      <span class="nav-brand-divider" aria-hidden="true"></span>
+      <img class="nav-brand-cobrand" src="/icons/amazon-cobrand.png" alt="amazon benefits" width="180" height="60">
+    `;
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {

@@ -1,3 +1,6 @@
 {
-  "enableAllProjectMcpServers": true
+  "enableAllProjectMcpServers": true,
+  "enabledPlugins": {
+    "aem-edge-delivery-services@adobe-skills": true
+  }
 }

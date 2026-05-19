@@ -1,25 +1,32 @@
 /* stylelint-disable no-descending-specificity */
 
-/* Footer - Kaiser Permanente style */
+/* Footer - Kaiser Permanente style
+ *  Two-tier background:
+ *   - Section 1 (top): link columns on medium navy (#003b71)
+ *   - Sections 2-6 (bottom): KP logo, legal columns, social, disclaimers, copyright on dark navy (#0d1c3d)
+ */
 footer {
   font-size: 16px;
   color: var(--text-color);
 }
 
 footer .footer {
-  background-color: var(--text-color);
+  background-color: #0d1c3d;
   color: #fff;
 }
 
 footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  display: contents;
 }
 
-footer .footer > div:first-child {
-  padding-top: 48px;
-  padding-bottom: 32px;
+footer .footer .section {
+  padding: 16px 24px;
+  background-color: #0d1c3d;
+}
+
+footer .footer .section .default-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 footer .footer p {
@@ -27,7 +34,7 @@ footer .footer p {
 }
 
 footer .footer a:any-link {
-  color: rgb(255 255 255 / 85%);
+  color: #fff;
   text-decoration: none;
   font-size: 14px;
 }
@@ -37,8 +44,13 @@ footer .footer a:any-link:hover {
   text-decoration: underline;
 }
 
-/* Footer link columns - target through default-content-wrapper */
-footer .footer > div:first-child .default-content-wrapper > ul {
+/* === Section 1: top-tier link columns === */
+footer .footer .section:nth-child(1) {
+  background-color: #003b71;
+  padding: 56px 24px 40px;
+}
+
+footer .footer .section:nth-child(1) .default-content-wrapper > ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -48,78 +60,156 @@ footer .footer > div:first-child .default-content-wrapper > ul {
 }
 
 @media (width >= 900px) {
-  footer .footer > div:first-child .default-content-wrapper > ul {
+  footer .footer .section:nth-child(1) .default-content-wrapper > ul {
     flex-direction: row;
-    gap: 48px;
+    gap: 32px;
   }
 }
 
-footer .footer > div:first-child .default-content-wrapper > ul > li {
+footer .footer .section:nth-child(1) .default-content-wrapper > ul > li {
   flex: 1;
 }
 
-footer .footer > div:first-child .default-content-wrapper > ul > li > p {
+footer .footer .section:nth-child(1) .default-content-wrapper > ul > li > p {
   margin-bottom: 16px;
 }
 
-footer .footer > div:first-child .default-content-wrapper > ul > li > p > strong {
+footer .footer .section:nth-child(1) .default-content-wrapper > ul > li > p > strong {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
 }
 
-footer .footer > div:first-child .default-content-wrapper > ul > li > ul {
+footer .footer .section:nth-child(1) .default-content-wrapper > ul > li > ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-footer .footer > div:first-child .default-content-wrapper > ul > li > ul > li a {
+footer .footer .section:nth-child(1) .default-content-wrapper > ul > li > ul > li a {
   font-size: 14px;
-  color: rgb(255 255 255 / 85%);
+  color: rgb(255 255 255 / 95%);
 }
 
-footer .footer > div:first-child .default-content-wrapper > ul > li > ul > li a:hover {
-  color: #fff;
+/* === Section 2: KP logo === */
+footer .footer .section:nth-child(2) {
+  padding: 32px 24px 16px;
 }
 
-/* Footer legal links section (2nd div) */
-footer .footer > div:nth-child(2) {
-  border-top: 1px solid rgb(255 255 255 / 20%);
-  padding-top: 24px;
-  padding-bottom: 16px;
+footer .footer .section:nth-child(2) img {
+  height: 28px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
-footer .footer > div:nth-child(2) .default-content-wrapper > p {
+/* === Section 3: 4-column legal links === */
+footer .footer .section:nth-child(3) {
+  padding: 8px 24px 32px;
+}
+
+footer .footer .section:nth-child(3) .default-content-wrapper > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (width >= 900px) {
+  footer .footer .section:nth-child(3) .default-content-wrapper > ul {
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+footer .footer .section:nth-child(3) .default-content-wrapper > ul > li {
+  flex: 1;
+}
+
+footer .footer .section:nth-child(3) .default-content-wrapper > ul > li > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+footer .footer .section:nth-child(3) .default-content-wrapper > ul > li > ul > li a {
+  font-size: 14px;
+  color: rgb(255 255 255 / 90%);
+}
+
+/* === Section 4: social icons row === */
+footer .footer .section:nth-child(4) {
+  padding: 16px 24px 24px;
+}
+
+footer .footer .section:nth-child(4) .default-content-wrapper > p {
+  display: flex;
+  gap: 20px;
   align-items: center;
 }
 
-footer .footer > div:nth-child(2) a {
-  font-size: 13px;
+footer .footer .section:nth-child(4) .default-content-wrapper > p > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+footer .footer .section:nth-child(4) .default-content-wrapper > p > a img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+footer .footer .section:nth-child(4) .default-content-wrapper > p > a:hover img {
+  opacity: 0.85;
+}
+
+/* === Section 5: long disclaimer paragraphs === */
+footer .footer .section:nth-child(5) {
+  padding: 16px 24px;
+}
+
+footer .footer .section:nth-child(5) .default-content-wrapper > p {
+  font-size: 12px;
+  line-height: 18px;
   color: rgb(255 255 255 / 80%);
+  margin-bottom: 12px;
 }
 
-footer .footer > div:nth-child(2) a:hover {
-  color: #fff;
+footer .footer .section:nth-child(5) .default-content-wrapper > p:last-child {
+  margin-bottom: 0;
 }
 
-/* Footer copyright section (last div) */
-footer .footer > div:last-child {
-  border-top: 1px solid rgb(255 255 255 / 20%);
-  padding-top: 24px;
-  padding-bottom: 32px;
+footer .footer .section:nth-child(5) a {
+  font-size: 12px;
+  color: rgb(255 255 255 / 90%);
+  text-decoration: underline;
 }
 
-footer .footer > div:last-child p {
-  font-size: 13px;
-  color: rgb(255 255 255 / 70%);
-  line-height: 1.5;
+/* === Section 6: Adobe Acrobat + copyright === */
+footer .footer .section:last-child {
+  padding: 16px 24px 32px;
+}
+
+footer .footer .section:last-child p {
+  font-size: 12px;
+  color: rgb(255 255 255 / 75%);
+  line-height: 1.6;
+}
+
+footer .footer .section:last-child a:any-link {
+  font-size: 12px;
+  color: rgb(255 255 255 / 90%);
+  text-decoration: underline;
 }
 
 /* Remove button styling from footer links */
@@ -135,7 +225,7 @@ footer .footer a.button:any-link {
   margin: 0;
   font-size: 14px;
   font-weight: 400;
-  color: rgb(255 255 255 / 85%);
+  color: #fff;
   white-space: normal;
   text-overflow: unset;
   overflow: visible;
@@ -148,7 +238,32 @@ footer .footer a.button:any-link:hover {
 }
 
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer .section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  footer .footer .section:nth-child(1) {
+    padding: 56px 32px 40px;
+  }
+
+  footer .footer .section:nth-child(2) {
+    padding: 32px 32px 16px;
+  }
+
+  footer .footer .section:nth-child(3) {
+    padding: 8px 32px 32px;
+  }
+
+  footer .footer .section:nth-child(4) {
+    padding: 16px 32px 24px;
+  }
+
+  footer .footer .section:nth-child(5) {
+    padding: 16px 32px;
+  }
+
+  footer .footer .section:last-child {
+    padding: 16px 32px 40px;
   }
 }

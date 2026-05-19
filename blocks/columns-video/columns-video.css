@@ -25,8 +25,8 @@
 }
 
 /* Video embed container - maintain 16:9 aspect ratio */
-.columns-video > div > div:first-child .video-placeholder,
-.columns-video > div > div:first-child a:any-link {
+.columns-video .columns-video-embed,
+.columns-video > div > div:first-child .video-placeholder {
   display: block;
   position: relative;
   width: 100%;
@@ -36,6 +36,7 @@
   background-color: #000;
 }
 
+.columns-video .columns-video-embed iframe,
 .columns-video > div > div:first-child iframe {
   position: absolute;
   top: 0;
