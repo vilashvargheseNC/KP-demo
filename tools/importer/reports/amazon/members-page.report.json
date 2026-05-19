@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://choose.kaiserpermanente.org/amazon/members-page",
+  "path": "amazon/members-page",
+  "timestamp": "2026-05-19T09:44:21.324Z",
+  "title": "amazon Members Page",
+  "template": "amazon-landing",
+  "blocks": [
+    "hero-welcome",
+    "columns-coverage",
+    "columns-coverage",
+    "columns-coverage"
+  ]
+}
