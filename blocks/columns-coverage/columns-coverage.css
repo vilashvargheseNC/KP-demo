@@ -1,33 +1,110 @@
+/* Block: columns-coverage
+ * Two-column: US map image (left) and coverage info (right) with two subsections
+ * showing h3 headings, bullet lists, and blue CTA links.
+ * On mobile image goes above text.
+ * Extracted values from source computed styles.
+ */
+
+.columns-coverage {
+  padding: 0;
+}
+
 .columns-coverage > div {
   display: flex;
   flex-direction: column;
+  gap: 32px;
 }
 
-.columns-coverage img {
-  width: 100%;
-}
-
-.columns-coverage > div > div {
-  order: 1;
-}
-
+/* Image column */
 .columns-coverage > div > .columns-coverage-img-col {
   order: 0;
 }
 
 .columns-coverage > div > .columns-coverage-img-col img {
   display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Text column */
+.columns-coverage > div > div:not(.columns-coverage-img-col) {
+  order: 1;
+}
+
+.columns-coverage h3 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  color: var(--text-color);
+  margin: 10px 0;
+}
+
+.columns-coverage h3:first-child {
+  margin-top: 0;
+}
+
+.columns-coverage ul {
+  margin: 12px 0;
+  padding: 0 0 0 24px;
+}
+
+.columns-coverage ul li {
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--text-color);
+  margin: 4px 0;
+}
+
+.columns-coverage p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color);
+  margin: 12px 0;
+}
+
+.columns-coverage a:any-link {
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.columns-coverage a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* CTA button-style links (p > a as sole child renders as button) */
+.columns-coverage p a:only-child {
+  display: inline-block;
+  background-color: var(--link-color);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 24px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.columns-coverage p a:only-child:hover {
+  background-color: var(--link-hover-color);
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (width >= 900px) {
   .columns-coverage > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .columns-coverage > div > div {
-    flex: 1;
-    order: unset;
+    flex: 1 1 0%;
+  }
+
+  .columns-coverage > div > .columns-coverage-img-col {
+    flex: 1 1 0%;
   }
 }

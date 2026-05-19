@@ -1,27 +1,120 @@
+/* Block: cards-resources
+ * Source: Kaiser Permanente Amazon page - "Additional information" cards
+ * Extracted values from source computed styles
+ */
+
 .cards-resources > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .cards-resources > ul > li {
-  border: 1px solid #dadada;
+  border: 1px solid rgb(0 0 0 / 8%);
+  border-radius: 12px;
   background-color: var(--background-color);
-}
-
-.cards-resources .cards-resources-card-body {
-  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .cards-resources .cards-resources-card-image {
   line-height: 0;
 }
 
+.cards-resources .cards-resources-card-image picture {
+  display: block;
+}
+
 .cards-resources > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 220px;
   object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.cards-resources .cards-resources-card-body {
+  padding: 16px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-resources .cards-resources-card-body p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-color);
+}
+
+.cards-resources .cards-resources-card-body p:first-child {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.cards-resources .cards-resources-card-body p:last-child {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+/* CTA links - source uses underlined links with arrow icon */
+.cards-resources .cards-resources-card-body a:any-link {
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.cards-resources .cards-resources-card-body a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Reset EDS button decoration if applied */
+main .cards-resources .cards-resources-card-body a.button:any-link {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  white-space: normal;
+  display: inline;
+}
+
+main .cards-resources .cards-resources-card-body a.button:any-link:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+main .cards-resources .cards-resources-card-body p.button-container {
+  margin: 0;
+  padding-top: 8px;
+  margin-top: auto;
+}
+
+@media (width >= 900px) {
+  .cards-resources > ul {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .cards-resources > ul > li {
+    flex: 1 1 0%;
+    max-width: 33.333%;
+  }
+
+  .cards-resources > ul > li img {
+    height: 304px;
+  }
 }

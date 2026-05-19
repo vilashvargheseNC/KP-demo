@@ -1,58 +1,185 @@
+/* Block: tabs-features */
+
+/* Tab list */
 .tabs-features .tabs-features-list {
   display: flex;
-  gap: 0.5ch;
+  gap: 0;
   max-width: 100%;
-  font-size: var(--body-font-size-xs);
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid rgb(233 235 238);
   overflow-x: auto;
 }
 
-@media (width >= 600px) {
-  .tabs-features .tabs-features-list {
-    font-size: var(--body-font-size-s);
-  }
-}
-
-@media (width >= 900px) {
-  .tabs-features .tabs-features-list {
-    font-size: var(--body-font-size-m);
-  }
-}
-
+/* Tab buttons - base (inactive) */
 .tabs-features .tabs-features-list button {
   flex: 0 0 max-content;
   margin: 0;
-  border: 1px solid #dadada;
+  border: none;
+  border-bottom: 3px solid transparent;
   border-radius: 0;
-  padding: 0.5em;
-  background-color: var(--light-color);
-  color: initial;
-  font-weight: bold;
-  line-height: unset;
-  text-align: initial;
+  padding: 15px 10px;
+  background-color: transparent;
+  color: rgb(103 112 131);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
   text-overflow: unset;
   overflow: unset;
-  white-space: unset;
-  transition: background-color 0.2s;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tabs-features .tabs-features-list button:hover {
+  color: var(--text-color);
 }
 
 .tabs-features .tabs-features-list button p {
   margin: 0;
 }
 
-
+/* Active tab button */
 .tabs-features .tabs-features-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  cursor: initial;
+  color: var(--text-color);
+  font-weight: 500;
+  border-bottom: 3px solid var(--link-color);
+  background-color: transparent;
+  cursor: default;
 }
 
+/* Tab panels */
 .tabs-features .tabs-features-panel {
-  margin-top: -1px;
-  padding: 24px;
-  border: 1px solid #dadada;
-  overflow: auto;
+  margin-top: 0;
+  padding: 32px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--pale-blue-bg);
+  overflow: visible;
 }
 
 .tabs-features .tabs-features-panel[aria-hidden='true'] {
   display: none;
+}
+
+/* Panel content - single column on mobile */
+.tabs-features .tabs-features-panel > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Headings inside panels */
+.tabs-features .tabs-features-panel h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.28px;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+/* Paragraphs inside panels */
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs-features .tabs-features-panel p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(0 0 0);
+  margin: 0 0 16px;
+}
+
+/* Links inside panels - reset button auto-decoration */
+main .tabs-features .tabs-features-panel a:any-link {
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+main .tabs-features .tabs-features-panel a.button:any-link {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  white-space: normal;
+}
+
+main .tabs-features .tabs-features-panel a.button:any-link:hover {
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+main .tabs-features .tabs-features-panel p.button-wrapper {
+  margin: 0 0 16px;
+}
+
+/* Images inside panels */
+.tabs-features .tabs-features-panel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Picture/image paragraph wrapper */
+.tabs-features .tabs-features-panel p:has(picture) {
+  margin: 0;
+}
+
+/* Italic / testimonial text */
+.tabs-features .tabs-features-panel em {
+  font-style: italic;
+  display: block;
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(103 112 131);
+}
+
+/* Desktop layout - two columns */
+@media (width >= 900px) {
+  .tabs-features .tabs-features-list button {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+
+  .tabs-features .tabs-features-panel {
+    padding: 40px;
+    border-radius: 8px;
+  }
+
+  .tabs-features .tabs-features-panel > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 0 40px;
+    align-items: start;
+  }
+
+  /* All direct children default to left column */
+  .tabs-features .tabs-features-panel > div > * {
+    grid-column: 1;
+  }
+
+  /* Picture paragraph takes right column and spans all rows */
+  .tabs-features .tabs-features-panel > div > p:last-child:has(picture) {
+    grid-column: 2;
+    grid-row: 1 / span 10;
+    align-self: center;
+  }
+
+  .tabs-features .tabs-features-panel h3 {
+    font-size: 28px;
+    line-height: 36px;
+  }
 }
