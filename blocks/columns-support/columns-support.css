@@ -1,33 +1,78 @@
+/* Block: columns-support
+ * Two-column support info on pale blue background.
+ * Contains "Talk with a pre-enrollment specialist" (left) and "Ready to enroll?" (right).
+ * Extracted values from source computed styles.
+ */
+
+.columns-support {
+  padding: 30px 0 20px;
+}
+
 .columns-support > div {
   display: flex;
   flex-direction: column;
 }
 
-.columns-support img {
-  width: 100%;
-}
-
 .columns-support > div > div {
-  order: 1;
+  flex: 1 1 0%;
+  padding: 16px;
 }
 
-.columns-support > div > .columns-support-img-col {
-  order: 0;
+.columns-support h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: var(--text-color);
+  margin: 0 0 12px;
 }
 
-.columns-support > div > .columns-support-img-col img {
-  display: block;
+.columns-support p {
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  line-height: 20px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.columns-support a:any-link {
+  color: var(--link-color);
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.columns-support a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Reset EDS button styling for plain links in this block */
+.columns-support p.button-container {
+  margin: 0;
+}
+
+.columns-support p.button-container a.button:any-link {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  white-space: normal;
+}
+
+.columns-support p.button-container a.button:any-link:hover {
+  background-color: transparent;
+  color: var(--link-hover-color);
 }
 
 @media (width >= 900px) {
   .columns-support > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-direction: row;
   }
 
   .columns-support > div > div {
-    flex: 1;
-    order: unset;
+    flex: 1 1 0%;
   }
 }

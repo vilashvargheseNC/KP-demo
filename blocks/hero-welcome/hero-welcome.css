@@ -1,47 +1,169 @@
+/* Block: hero-welcome
+ * Full-width hero with background image and white text overlay card.
+ * Source: https://choose.kaiserpermanente.org/amazon (.promo-v2-versionB-main-frame)
+ */
+
+/* Full-width wrapper override */
+.hero-welcome-container {
+  padding: 0 !important;
+}
+
 .hero-welcome-container .hero-welcome-wrapper {
   max-width: unset;
   padding: 0;
 }
 
+/* Hide empty default content after the block */
+.hero-welcome-container .default-content-wrapper {
+  display: none;
+}
+
+/* Block container - relative for overlay positioning */
 .hero-welcome {
   position: relative;
-  padding: 40px 24px;
   min-height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-welcome h1,
-.hero-welcome h2,
-.hero-welcome h3,
-.hero-welcome h4,
-.hero-welcome h5,
-.hero-welcome h6,
-.hero-welcome p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero-welcome.no-image * {
-  color: var(--text-color);
-}
-
-.hero-welcome picture {
+/* Row 1: Background image container - covers entire block */
+.hero-welcome > div:first-child {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: 0;
 }
 
-.hero-welcome img {
-  object-fit: cover;
-  width: 100%;
+/* Row 2: Text overlay content */
+.hero-welcome > div:last-child {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 300px;
+  padding: 24px;
+}
+
+.hero-welcome > div:first-child > div {
   height: 100%;
 }
 
+.hero-welcome picture {
+  display: block;
+  height: 100%;
+}
+
+.hero-welcome picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.hero-welcome > div:last-child > div {
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: rgb(0 0 0 / 4%) 0 4px 20px 0;
+  padding: 32px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Heading */
+.hero-welcome h1 {
+  font-size: 28px;
+  font-weight: 350;
+  font-family: var(--heading-font-family);
+  line-height: 1.2;
+  letter-spacing: -0.32px;
+  color: var(--text-color);
+  margin: 0 0 16px;
+}
+
+/* Description paragraph */
+.hero-welcome p {
+  font-size: 16px;
+  font-weight: 325;
+  color: var(--text-color);
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
+/* CTA Button - style the last paragraph link as a button */
+.hero-welcome > div:last-child > div > p:last-child {
+  margin: 24px 0 0;
+}
+
+.hero-welcome > div:last-child > div > p:last-child a:any-link {
+  background-color: var(--link-color);
+  color: #fff;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 350;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-welcome > div:last-child > div > p:last-child a:any-link:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}
+
+/* Also handle if EDS does add .button class */
+.hero-welcome a.button:any-link {
+  background-color: var(--link-color);
+  color: #fff;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 350;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-welcome a.button:any-link:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}
+
+/* No-image fallback */
+.hero-welcome.no-image > div:first-child {
+  display: none;
+}
+
+.hero-welcome.no-image > div:last-child > div {
+  background-color: var(--pale-blue-bg);
+  box-shadow: none;
+}
+
+/* Desktop layout (>= 900px) */
 @media (width >= 900px) {
   .hero-welcome {
-    padding: 40px 32px;
+    min-height: 460px;
+  }
+
+  .hero-welcome > div:last-child {
+    min-height: 460px;
+    padding: 32px;
+    justify-content: flex-end;
+  }
+
+  .hero-welcome > div:last-child > div {
+    max-width: 540px;
+    padding: 32px;
+  }
+
+  .hero-welcome h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .hero-welcome p {
+    font-size: 18px;
+    line-height: 24px;
   }
 }
