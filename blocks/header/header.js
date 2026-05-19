@@ -179,5 +179,12 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
-  block.append(navWrapper);
+
+  // Demo disclaimer banner above the main header
+  const disclaimer = document.createElement('div');
+  disclaimer.className = 'demo-disclaimer';
+  disclaimer.setAttribute('role', 'note');
+  disclaimer.innerHTML = '<p><strong>Demo site</strong> — this is a demonstration of Kaiser Permanente built on Adobe Edge Delivery Services (EDS). Content is for showcase purposes only.</p>';
+
+  block.append(disclaimer, navWrapper);
 }
