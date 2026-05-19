@@ -1,6 +1,14 @@
+/* stylelint-disable no-descending-specificity */
+
+/* Footer - Kaiser Permanente style */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+footer .footer {
+  background-color: var(--text-color);
+  color: #fff;
 }
 
 footer .footer > div {
@@ -9,8 +17,133 @@ footer .footer > div {
   padding: 40px 24px 24px;
 }
 
+footer .footer > div:first-child {
+  padding-top: 48px;
+  padding-bottom: 32px;
+}
+
 footer .footer p {
   margin: 0;
+}
+
+footer .footer a:any-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer .footer a:any-link:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+/* Footer link columns */
+footer .footer > div:first-child ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (width >= 900px) {
+  footer .footer > div:first-child ul {
+    flex-direction: row;
+    gap: 48px;
+  }
+}
+
+footer .footer > div:first-child > ul > li {
+  flex: 1;
+}
+
+footer .footer > div:first-child > ul > li > p {
+  margin-bottom: 16px;
+}
+
+footer .footer > div:first-child > ul > li > p > strong {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+footer .footer > div:first-child > ul > li > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+footer .footer > div:first-child > ul > li > ul > li > a {
+  font-size: 14px;
+  color: rgb(255 255 255 / 85%);
+}
+
+footer .footer > div:first-child > ul > li > ul > li > a:hover {
+  color: #fff;
+}
+
+/* Footer legal links section */
+footer .footer > div:nth-child(2) {
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+footer .footer > div:nth-child(2) p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+footer .footer > div:nth-child(2) a {
+  font-size: 13px;
+  color: rgb(255 255 255 / 80%);
+}
+
+footer .footer > div:nth-child(2) a:hover {
+  color: #fff;
+}
+
+/* Footer copyright section */
+footer .footer > div:last-child {
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+footer .footer > div:last-child p {
+  font-size: 13px;
+  color: rgb(255 255 255 / 70%);
+  line-height: 1.5;
+}
+
+/* Remove button styling from footer links */
+footer .footer .button-container {
+  display: inline;
+}
+
+footer .footer a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(255 255 255 / 85%);
+  white-space: normal;
+  text-overflow: unset;
+  overflow: visible;
+}
+
+footer .footer a.button:any-link:hover {
+  background: none;
+  color: #fff;
+  text-decoration: underline;
 }
 
 @media (width >= 900px) {
