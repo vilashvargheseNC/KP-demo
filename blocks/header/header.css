@@ -282,14 +282,30 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-header nav .nav-tools a {
-  font-size: 14px;
-  padding: 8px 16px;
+header nav .nav-tools p {
+  margin: 0;
+}
+
+header nav .nav-tools .button-container {
+  display: inline;
+}
+
+header nav .nav-tools a.button:any-link,
+header nav .nav-tools a { /* stylelint-disable-line no-descending-specificity */
+  font-size: 13px;
+  padding: 6px 14px;
   border: 1px solid #fff;
   border-radius: 20px;
+  background: transparent;
+  color: #fff;
+  white-space: nowrap;
+  display: inline-block;
+  text-decoration: none;
 }
 
 header nav .nav-tools a:hover {

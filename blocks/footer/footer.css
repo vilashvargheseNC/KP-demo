@@ -27,18 +27,18 @@ footer .footer p {
 }
 
 footer .footer a:any-link {
-  color: #fff;
+  color: rgb(255 255 255 / 85%);
   text-decoration: none;
   font-size: 14px;
 }
 
 footer .footer a:any-link:hover {
+  color: #fff;
   text-decoration: underline;
-  opacity: 0.9;
 }
 
-/* Footer link columns */
-footer .footer > div:first-child ul {
+/* Footer link columns - target through default-content-wrapper */
+footer .footer > div:first-child .default-content-wrapper > ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -48,55 +48,56 @@ footer .footer > div:first-child ul {
 }
 
 @media (width >= 900px) {
-  footer .footer > div:first-child ul {
+  footer .footer > div:first-child .default-content-wrapper > ul {
     flex-direction: row;
     gap: 48px;
   }
 }
 
-footer .footer > div:first-child > ul > li {
+footer .footer > div:first-child .default-content-wrapper > ul > li {
   flex: 1;
 }
 
-footer .footer > div:first-child > ul > li > p {
+footer .footer > div:first-child .default-content-wrapper > ul > li > p {
   margin-bottom: 16px;
 }
 
-footer .footer > div:first-child > ul > li > p > strong {
+footer .footer > div:first-child .default-content-wrapper > ul > li > p > strong {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
 }
 
-footer .footer > div:first-child > ul > li > ul {
+footer .footer > div:first-child .default-content-wrapper > ul > li > ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
-footer .footer > div:first-child > ul > li > ul > li > a {
+footer .footer > div:first-child .default-content-wrapper > ul > li > ul > li a {
   font-size: 14px;
   color: rgb(255 255 255 / 85%);
 }
 
-footer .footer > div:first-child > ul > li > ul > li > a:hover {
+footer .footer > div:first-child .default-content-wrapper > ul > li > ul > li a:hover {
   color: #fff;
 }
 
-/* Footer legal links section */
+/* Footer legal links section (2nd div) */
 footer .footer > div:nth-child(2) {
   border-top: 1px solid rgb(255 255 255 / 20%);
   padding-top: 24px;
   padding-bottom: 16px;
 }
 
-footer .footer > div:nth-child(2) p {
+footer .footer > div:nth-child(2) .default-content-wrapper > p {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
+  align-items: center;
 }
 
 footer .footer > div:nth-child(2) a {
@@ -108,7 +109,7 @@ footer .footer > div:nth-child(2) a:hover {
   color: #fff;
 }
 
-/* Footer copyright section */
+/* Footer copyright section (last div) */
 footer .footer > div:last-child {
   border-top: 1px solid rgb(255 255 255 / 20%);
   padding-top: 24px;
