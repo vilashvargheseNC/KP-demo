@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://choose.kaiserpermanente.org/amazon/resources",
+  "path": "amazon/resources",
+  "timestamp": "2026-05-19T09:44:03.218Z",
+  "title": "amazon Open Enrollment Hub",
+  "template": "amazon-landing",
+  "blocks": [
+    "hero-welcome",
+    "cards-resources"
+  ]
+}

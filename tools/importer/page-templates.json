@@ -6,7 +6,12 @@
     {
       "name": "amazon-landing",
       "urls": [
-        "https://choose.kaiserpermanente.org/amazon"
+        "https://choose.kaiserpermanente.org/amazon",
+        "https://choose.kaiserpermanente.org/amazon/resources",
+        "https://choose.kaiserpermanente.org/amazon/plans",
+        "https://choose.kaiserpermanente.org/amazon/getting-care",
+        "https://choose.kaiserpermanente.org/amazon/members-page",
+        "https://choose.kaiserpermanente.org/amazon/support"
       ],
       "description": "Kaiser Permanente Amazon enrollment landing page with partner-specific content and CTAs",
       "blocks": [

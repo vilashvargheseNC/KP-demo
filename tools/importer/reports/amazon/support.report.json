@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://choose.kaiserpermanente.org/amazon/support",
+  "path": "amazon/support",
+  "timestamp": "2026-05-19T09:44:26.800Z",
+  "title": "amazon Support",
+  "template": "amazon-landing",
+  "blocks": [
+    "hero-welcome"
+  ]
+}
